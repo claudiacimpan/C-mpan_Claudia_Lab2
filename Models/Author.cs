@@ -10,6 +10,13 @@ namespace Cîmpan_Claudia_Lab2.Models
 
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        public string AuthorName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
         public ICollection<Book>? Books { get; set; }
     }
 }

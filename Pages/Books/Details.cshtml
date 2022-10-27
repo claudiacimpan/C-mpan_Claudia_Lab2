@@ -20,18 +20,24 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Author)
         </dt>
-        <dt class="col-sm-2">
+  
+        <dd class="col-sm-10">
+            <!--@Html.DisplayFor(model => model.Book.Author)-->
+            @Html.DisplayFor(model => model.Book.Author.AuthorName)
+            </dd>
+        <!--<<dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Author.FirstName)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Book.Author.FirstName)
+
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Author.LastName)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Book.Author.LastName)
-        </dd>
+        </dd> -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Price)
         </dt>
@@ -47,6 +53,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Book?.ID">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.Book?.ID">Edit</a>
     <a asp-page="./Index">Back to List</a>
 </div>

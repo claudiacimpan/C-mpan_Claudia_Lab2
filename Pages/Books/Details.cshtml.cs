@@ -38,10 +38,8 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
             {
                 Book = book;
                 ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-                ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID",
-    "FirstName");
-                ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID",
-    "LastName");
+                ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID","FirstName");
+                ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID","LastName");
             }
             return Page();
         }
