@@ -19,6 +19,8 @@ namespace Cîmpan_Claudia_Lab2.Models
         public int? PublisherID { get; set; }
         public Publisher? Publisher { get; set; }
         public int? AuthorID { get; set; }
+        [Display(Name = "Author")]
         public Author? Author { get; set; }
+        public ICollection<BookCategory>? BookCategories { get; set; }
     }
 }

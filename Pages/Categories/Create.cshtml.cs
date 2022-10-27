@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Cîmpan_Claudia_Lab2.Data;
 using Cîmpan_Claudia_Lab2.Models;
 
-namespace Cîmpan_Claudia_Lab2.Pages.Books
+namespace Cîmpan_Claudia_Lab2.Pages.Categories
 {
     public class CreateModel : PageModel
     {
@@ -21,17 +21,11 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
-"PublisherName");
-            ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID",
-"FirstName");
-            ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID",
-"LastName");
             return Page();
         }
 
         [BindProperty]
-        public Book Book { get; set; }
+        public Category Category { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -42,7 +36,7 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
                 return Page();
             }
 
-            _context.Book.Add(Book);
+            _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
