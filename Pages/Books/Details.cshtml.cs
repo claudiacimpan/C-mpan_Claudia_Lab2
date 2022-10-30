@@ -20,7 +20,7 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
             _context = context;
         }
 
-      public Book Book { get; set; }
+        public Book Book { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -34,12 +34,13 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Book = book;
                 ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-                ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID","FirstName");
-                ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID","LastName");
+                ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID", "FirstName");
+                ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID", "LastName");
+                
             }
             return Page();
         }

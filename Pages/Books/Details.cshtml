@@ -20,24 +20,24 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Author)
         </dt>
-  
+
         <dd class="col-sm-10">
 
             <!--@Html.DisplayFor(model => model.Book.Author)-->
             @Html.DisplayFor(model => model.Book.Author.AuthorName)
-            </dd>
+        </dd>
         <!--<<dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Book.Author.FirstName)
+        @Html.DisplayNameFor(model => model.Book.Author.FirstName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Book.Author.FirstName)
+        @Html.DisplayFor(model => model.Book.Author.FirstName)
 
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Book.Author.LastName)
+        @Html.DisplayNameFor(model => model.Book.Author.LastName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Book.Author.LastName)
+        @Html.DisplayFor(model => model.Book.Author.LastName)
         </dd> -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Book.Price)
@@ -50,6 +50,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Book.PublishingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Book.Publisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Book.Publisher)
         </dd>
     </dl>
 </div>
