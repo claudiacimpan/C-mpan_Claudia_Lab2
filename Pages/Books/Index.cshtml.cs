@@ -24,7 +24,7 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
         public int BookID { get; set; }
         public int CategoryID { get; set; }
 
-        /*  public async Task OnGetAsync()
+         /* public async Task OnGetAsync()
           {
               if (_context.Book != null)
               {
@@ -40,6 +40,7 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
             BookD = new BookData();
 
             BookD.Books = await _context.Book
+            .Include(b => b.Author)
             .Include(b => b.Publisher)
             .Include(b => b.BookCategories)
             .ThenInclude(b => b.Category)

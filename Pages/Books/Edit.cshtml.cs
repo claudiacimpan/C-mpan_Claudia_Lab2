@@ -41,12 +41,18 @@ namespace Cîmpan_Claudia_Lab2.Pages.Books
             }
             PopulateAssignedCategoryData(_context, Book);
             //Book = book;
+            var authorList = _context.Author.Select(x => new
+            {
+                x.ID,
+                FullName = x.LastName + " " + x.FirstName
+            });
+
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             ViewData["FirstName"] = new SelectList(_context.Set<Author>(), "ID",
 "FirstName");
             ViewData["LastName"] = new SelectList(_context.Set<Author>(), "ID",
 "LastName");
-            //ViewData["Author"] = new SelectList(_context.Set<Author>(),"ID","FirstName");
+            ViewData["Author"] = new SelectList(_context.Set<Author>(),"ID","FirstName");
             return Page();
         }
 
