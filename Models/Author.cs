@@ -10,7 +10,7 @@ namespace Cîmpan_Claudia_Lab2.Models
 
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        public string AuthorName
+        public string FullName
         {
             get
             {
