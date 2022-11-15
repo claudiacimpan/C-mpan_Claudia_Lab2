@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Cîmpan_Claudia_Lab2.Data;
 using Cîmpan_Claudia_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Cîmpan_Claudia_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
+
     public class DeleteModel : PageModel
     {
         private readonly Cîmpan_Claudia_Lab2.Data.Cîmpan_Claudia_Lab2Context _context;
