@@ -12,10 +12,14 @@ builder.Services.AddAuthorization(options =>
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
 {
-    options.Conventions.AuthorizeFolder("/Books");
-    options.Conventions.AllowAnonymousToPage("/Books/Index");
+    options.Conventions.AuthorizeFolder("/Books"); //am acces doar autorizat in acest folder, trebuie sa fiu audentificat, si cu rol de user si admin cu orice
+    options.Conventions.AllowAnonymousToPage("/Books/Index"); //dam acces si fara audentificare, ca poate vrea doar sa vada cartea daca e
     options.Conventions.AllowAnonymousToPage("/Books/Details");
-    options.Conventions.AuthorizeFolder("/Members", "AdminPolicy");
+    options.Conventions.AuthorizeFolder("/Members", "AdminPolicy");//autorizeaza accesul pt cei care respecta politica adminpolicy
+    options.Conventions.AuthorizeFolder("/Publishers", "AdminPolicy");
+    options.Conventions.AuthorizeFolder("/Categories", "AdminPolicy");
+
+
 });
 builder.Services.AddDbContext<Cîmpan_Claudia_Lab2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Cîmpan_Claudia_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Cîmpan_Claudia_Lab2Context' not found.")));
